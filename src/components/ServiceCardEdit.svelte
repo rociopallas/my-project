@@ -1,4 +1,6 @@
 <script>
+  import EditPen from '../asset/EditPen.png';
+  
   let isModalOpen = false;
 
   const handleClick = () => {
@@ -30,10 +32,10 @@
 </script>
 
 <button 
-class="rounded bg-orange-500 border-black border-r-1" 
+class="rounded border-black border-r-1" 
 on:click={handleClick}
 >
-  EDIT
+  <img src={EditPen} alt="DeleteBin" class='h-10' />
 </button>
 {#if isModalOpen}
 <div class='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>

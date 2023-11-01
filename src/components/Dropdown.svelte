@@ -1,22 +1,44 @@
 <script>
-  let displayDropdown = false;
+  import OpenDropdown from '../asset/OpenDropdown.png';
+  // import { onMount } from 'svelte';
+
+  let isOpen = false;
 
   function toggleDropdown() {
-    displayDropdown = !displayDropdown;
+    isOpen = !isOpen;
   }
+
+  // onMount(() => {
+  //   function closeDropdown(event) {
+  //     if (isOpen && event.target.closest('.dropdown-button') === null) {
+  //       isOpen = false;
+  //     }
+  //   }
+
+  //   document.addEventListener('click', closeDropdown);
+
+  //   return () => {
+  //     document.removeEventListener('click', closeDropdown);
+  //   };
+  // });
 </script>
 
-<div class='bg-white rounded border border-black relative justify-center w-40 shadow-xl'>
-  <div class='px-6 flex flex-auto justify-center'>
-    <button on:click={toggleDropdown}><slot></slot></button>
-  </div>
-  <ul class='absolute bg-white border border-black rounded justify-center w-full'>
-    {#if displayDropdown}
-      <div class='px-10'>
-        <li class='px-5'>Rosa</li>
-        <li class='px-5'>Peder</li>
-        <li class='px-5'>Aldo</li>
-      </div>
-    {/if}
-  </ul>
+<div class="relative inline-block text-left ">
+  <button
+    class="border border-black p-2 rounded-2xl focus:outline-none font-semibold px-5 dropdown-button flex flex-row justify-between items-center gap-5 h-11"
+    on:click={toggleDropdown}
+  >
+    <slot></slot>
+    <img src={OpenDropdown} alt="Abrir desplegable" class='h-5' />
+  </button>
+
+  {#if isOpen}
+    <div class="origin-top-right absolute right-0 mt-2 w-48 bg-white rounded shadow-lg">
+      <ul>
+        <li class="p-2 hover:bg-blue-100">Option 1</li>
+        <li class="p-2 hover:bg-blue-100">Option 2</li>
+        <li class="p-2 hover:bg-blue-100">Option 3</li>
+      </ul>
+    </div>
+  {/if}
 </div>
