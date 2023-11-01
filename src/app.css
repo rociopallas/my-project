@@ -6,6 +6,18 @@
   background: linear-gradient(90deg, #9f53ff, #7a8ada, #15faa7);
 }
 
+.iris_green {
+  background-color: #15faa7;
+}
+
+.iris_blue {
+  background-color: #7a8ada;
+}
+
+.iris_purple {
+  background-color: #9f53ff;
+}
+
 .gradient-footer {
   background: linear-gradient(90deg, rgba(159, 83, 255, 0.5), rgba(122, 138, 218, 0.5), rgba(21, 250, 167, 0.5));
 
