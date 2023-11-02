@@ -1,9 +1,9 @@
 <script>
-  import logoIris from "../asset/iris.svg";
+  import logoIris from "../asset/Iris.svg";
   import loginIcon from "../asset/login.svg";
 </script>
 
-<div class="navbar bg-base-100">
+<div class="navbar fixed z-50 bg-white border-b-2">
   <div class="navbar-start">
     <div class="dropdown">
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -51,4 +51,5 @@
     </a>
   </div>
 </div>
-<hr>
+
+

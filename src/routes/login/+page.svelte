@@ -28,7 +28,7 @@ import PublicHeader from "../../components/publicHeader.svelte";
 </script>
 
 <PublicHeader />
-<div class="max-w-md mx-auto mt-10 p-4 min-h-screen">
+<div class="max-w-md mx-auto mt-40 p-4 min-h-screen">
   <h2 class="text-2xl font-semibold mb-4">Iniciar sesión</h2>
   <form on:submit={handleSubmit}>
     <div class="mb-4">

@@ -47,7 +47,7 @@
 </script>
 
 <PublicHeader />
-<section class="bg-gray-100 py-16">
+<section class=" py-24">
   <div class="container mx-auto px-4">
     <div class="text-center mb-8">
       <h2 class="text-4xl font-semibold">Acerca de Nosotros</h2>

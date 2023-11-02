@@ -17,7 +17,7 @@
 </script>
 
 <PublicHeader />
-<div class="bg-gray-100 py-16">
+<div class="py-24">
   <div class="container mx-auto text-center">
     <h2 class="text-4xl font-semibold">Contáctanos</h2>
     <p class="text-gray-600 mt-2">¡Estamos aquí para ayudarte! Ponte en contacto con nosotros a través de las siguientes vías:</p>
