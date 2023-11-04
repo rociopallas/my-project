@@ -2,9 +2,9 @@
   import calendario from '../../../../asset/calendario.png'
 </script>
 
-<div class='flex flex-grow h-full'>
+<div class='flex flex-grow h-full py-10'>
   <div class=' flex flex-col w-1/4 items-center justify-center'>
-    <h1 class='text-4xl font-semibold'>Mis agendas</h1>
+    <h1 class='text-4xl font-semibold mb-5'>Mis agendas</h1>
     <div class='flex flex-col gap-1 text-xl'>
       <div class=' flex flex-row gap-1'>
         <input type="checkbox" id="colab1" value="colab1" />
