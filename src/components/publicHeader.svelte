@@ -13,13 +13,13 @@
       </label>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/registro">Registro</a></li>
-        <li>
+        <li><a href="/" class="normal-case text-xl">Inicio</a></li>
+        <li><a href="/registro" class="normal-case text-xl">Registro</a></li>
+        <li class="normal-case text-xl">
           Nosotros
           <ul class="p-2">
-            <li><a href="/nosotros">¿Quienes somos?</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/nosotros" class="normal-case text-xl">¿Quienes somos?</a></li>
+            <li><a href="/contacto" class="normal-case text-xl">Contacto</a></li>
           </ul>
         </li>
       </ul>
@@ -31,15 +31,15 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 gap-15">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/registro">Registro</a></li>
+      <li><a href="/" class="normal-case text-lg font-semibold">INICIO</a></li>
+      <li><a href="/registro" class="normal-case text-lg font-semibold">REGISTRO</a></li>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <li tabindex="0">
         <details>
-          <summary>Nosotros</summary>
+          <summary class="normal-case text-lg font-semibold">NOSOTROS</summary>
           <ul class="p-2 w-52">
-            <li><a href="/nosotros">¿Quienes somos?</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/nosotros" class="normal-case text-xl font-semibold">¿Quienes somos?</a></li>
+            <li><a href="/contacto" class="normal-case text-xl font-semibold">Contacto</a></li>
           </ul>
         </details>
       </li>

@@ -1,36 +1,17 @@
 <script>
   import PublicFooter from "../../components/publicFooter.svelte";
-import PublicHeader from "../../components/publicHeader.svelte";
+  import PublicHeader from "../../components/publicHeader.svelte";
+  import { enhance } from "$app/forms"
 
-  let formData = {
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  };
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    formData = { ...formData, [name]: value };
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    // Aquí puedes realizar la validación
-    if (formData.password === formData.confirmPassword) {
-      // Realiza la acción de inicio de sesión
-      console.log('Datos enviados:', formData);
-    } else {
-      // Maneja la validación de contraseñas que no coinciden
-      alert('Las contraseñas no coinciden');
-    }
-  }
+  let email = "",
+    password = "",
+    error = "";
 </script>
 
 <PublicHeader />
 <div class="max-w-md mx-auto mt-40 p-4 min-h-screen">
   <h2 class="text-2xl font-semibold mb-4">Iniciar sesión</h2>
-  <form on:submit={handleSubmit}>
+  <form method="post" actions="/login" use:enhance>
     <div class="mb-4">
       <label for="email" class="block text-sm font-medium text-gray-700">
         Email:
@@ -39,8 +20,7 @@ import PublicHeader from "../../components/publicHeader.svelte";
         type="email"
         id="email"
         name="email"
-        bind:value={formData.email}
-        on:input={handleChange}
+        bind:value={email}
         class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         required
       />
@@ -53,8 +33,7 @@ import PublicHeader from "../../components/publicHeader.svelte";
         type="password"
         id="password"
         name="password"
-        bind:value={formData.password}
-        on:input={handleChange}
+        bind:value={password}
         class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         required
       />
@@ -63,9 +42,13 @@ import PublicHeader from "../../components/publicHeader.svelte";
       type="submit"
       class="w-full mt-4 py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
     >
-      <a href="/negocio/rosa">Iniciar Sesión</a>
+      Iniciar Sesión
     </button>
   </form>
-  <p class="pt-6">¿No estás registrado? <a href="/registro" class="underline text-blue-500">Registrarse</a></p>
+  <p class="pt-6">
+    ¿No estás registrado? <a href="/registro" class="underline text-blue-500"
+      >Registrarse</a
+    >
+  </p>
 </div>
 <PublicFooter />
