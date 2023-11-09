@@ -44,17 +44,17 @@
     };
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  console.log('Datos enviados:', editForm);
-  data = {
-    ...data,
-    name: editForm.name,
-    duration: editForm.duration,
-    price: editForm.price,
-    description: editForm.description,
-  };
-  isModalOpen = false;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Datos enviados:', editForm);
+    data = {
+      ...data,
+      name: editForm.name,
+      duration: editForm.duration,
+      price: editForm.price,
+      description: editForm.description,
+    };
+    isModalOpen = false;
 };
 </script>
 

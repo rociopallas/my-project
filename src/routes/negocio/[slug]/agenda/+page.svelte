@@ -2,11 +2,29 @@
   import Calendar from '@event-calendar/core';
   import TimeGrid from '@event-calendar/time-grid';
   import '@event-calendar/core/index.css';
+  import CollabCheckbox from '../../../../components/CollabCheckbox.svelte';
 
-  let hugo = {
-    collaborator: 'Rosa',
-    client: 'Hugo'
+  let collabArray = [
+    { name: 'Colaborador 1', isChecked: true },
+    { name: 'Colaborador 2', isChecked: false },
+    { name: 'Colaborador 3', isChecked: false },
+  ];
+
+  // escucha si hay cambios en alguna de las variables
+  function handleCheckboxChange(event) {
+    const { collaboratorName, isChecked } = event.detail;
+
+    // busca el colaborador que se ha clickeado
+    const collaborator = collabArray.find((c) => c.name === collaboratorName);
+    collaborator.isChecked = isChecked;
+
+    // desmarca los colaboradores que no son el que encontro (macumba)
+    collabArray
+      .filter((c) => c.name !== collaboratorName)
+      .forEach((c) => (c.isChecked = false));
   }
+
+
   let plugins = [TimeGrid];
 
   let options = {
@@ -56,7 +74,16 @@
   <div class=' flex flex-col w-1/4 justify-start items-center'>
       <h1 class='text-4xl font-semibold mb-5'>Mis agendas</h1>
   </div>
-  <div class="flex justify-center items-center w-full px-10">
+  <div class="flex justify-center items-center w-full px-10 gap-10 mx-5">
+    <div>
+      {#each collabArray as collaborator}
+      <CollabCheckbox
+        collaboratorName={collaborator.name}
+        isChecked={collaborator.isChecked}
+        on:checkboxChange={handleCheckboxChange}
+        />
+      {/each}
+    </div>
     <div class='justify-center items-center w-full'>
       <div class='bg-white ec-auto-dark text-black'>
       <Calendar {plugins} {options} />

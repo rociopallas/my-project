@@ -12,7 +12,7 @@
     <div class='flex flex-col w-1/2 justify-center items-center'>
       <h1 class='text-4xl font-semibold'>Preguntas frecuentes</h1>
 
-      <div class="collapse collapse-arrow bg-base-200">
+      <div class="collapse collapse-arrow bg-white border border-black">
         <input type="radio" name="my-accordion-1" checked="checked" /> 
         <div class="collapse-title text-xl font-medium">
           ¿Cómo agregar servicios?
@@ -21,7 +21,7 @@
           <p>hello</p>
         </div>
       </div>
-      <div class="collapse collapse-arrow bg-base-200">
+      <div class="collapse collapse-arrow bg-white border border-black">
         <input type="radio" name="my-accordion-1" /> 
         <div class="collapse-title text-xl font-medium">
           ¿Como agregar colaboradores?
@@ -30,7 +30,7 @@
           <p>hello</p>
         </div>
       </div>
-      <div class="collapse collapse-arrow bg-base-200">
+      <div class="collapse collapse-arrow bg-white border border-black">
         <input type="radio" name="my-accordion-1" /> 
         <div class="collapse-title text-xl font-medium">
           ¿Cómo se agendan mis clientes?

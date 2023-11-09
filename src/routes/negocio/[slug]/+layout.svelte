@@ -13,15 +13,18 @@
       </label>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/registro">Registro</a></li>
+        <li><a href="/negocio/[slug]/">Inicio</a></li>
         <li>
-          Nosotros
+          Mi negocio
           <ul class="p-2">
-            <li><a href="/nosotros">¿Quienes somos?</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/negocio/[slug]/mi_negocio">Perfil de negocio</a></li>
+            <li><a href="/negocio/[slug]/servicios">Mis servicios</a></li>
+            <li><a href="/negocio/[slug]/colaboradores">Mis colaboradores</a></li>
+            <li><a href="/negocio/[slug]/clientes">Mis clientes</a></li>
+            <li><a href="/negocio/[slug]/enlace">Mi enlace</a></li>
           </ul>
         </li>
+        <li><a href="/negocio/[slug]/agenda">Mi agenda</a></li>
       </ul>
     </div>
     <a href="/" class="btn btn-ghost normal-case text-xl">
@@ -39,6 +42,7 @@
           <ul class="p-2 w-52">
             <li><a href="/negocio/[slug]/mi_negocio">Perfil de negocio</a></li>
             <li><a href="/negocio/[slug]/servicios">Mis servicios</a></li>
+            <li><a href="/negocio/[slug]/colaboradores">Mis colaboradores</a></li>
             <li><a href="/negocio/[slug]/clientes">Mis clientes</a></li>
             <li><a href="/negocio/[slug]/enlace">Mi enlace</a></li>
           </ul>
