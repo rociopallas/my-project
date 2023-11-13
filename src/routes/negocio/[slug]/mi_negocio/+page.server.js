@@ -8,11 +8,13 @@ export const load = async() => {
       },
 
       body: JSON.stringify({
-        name,
+        name_business,
         address,
         phone,
-        businessType,
-        user  
+        business_type,
+        id_user,
+        opening_hours,
+        closiing_hours
       })
   })
 
@@ -24,8 +26,8 @@ export const load = async() => {
     },
 
     body: JSON.stringify({
-      mediaName,
-      userName,
+      media_name,
+      user_name,
       link  
     })
 })

@@ -9,6 +9,7 @@ export const load = async() => {
 
       body: JSON.stringify({
         name,
+        mail,
         phone,
         link
       })
