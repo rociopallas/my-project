@@ -51,7 +51,7 @@ function handleSubmit(event) {
 </script>
 
 
-<div class='flex flex-col items-start'>
+<div class='flex flex-col items-start mt-40 mb-36'>
   <h1 class='text-4xl font-bold my-10 ml-5'>MIS COLABORADORES</h1>
 
     <div class='mx-5 flex flex-wrap gap-5'>
@@ -69,16 +69,16 @@ function handleSubmit(event) {
         <div class="flex flex-row gap-1 w-80 h-52">
           <div class="card w-80 bg-base-100 shadow-xl">
             <div class="card-body flex flex-col pb-5 pt-0 h-52 justify-center">
-              <div class=" flex flex-wrap justify-center items-center border-b border-black h-16 -mt-1">
+              <div class=" flex flex-wrap justify-center items-center border-b border-black h-16 pb-2.5 pt-2.5 -mt-1">
                 <h1 class="card-title">AGREGAR COLABOADOR</h1>
               </div>
-                <div class="flex flex-row justify-center items-center p-1 gap-16">
+                <div class="flex flex-row justify-center items-center p-1 pt-4 inset-0 gap-16">
                   <button on:click={addCard} class=" w-20 h-20 rounded-full iris_green">
                     <img src={Plus} alt="Agregar" class="w-20 h-20"/>
                   </button>
                   {#if isModalOpen}
                 <div class='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
-                  <div class='bg-black p-5 rounded flex flex-col justify-center items-center gap-5'>
+                  <div class='bg-white border border-black p-5 rounded flex flex-col justify-center items-center gap-5'>
                 <form on:submit={handleSubmit}>
                   <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">

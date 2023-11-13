@@ -38,6 +38,9 @@
     formCard = { ...formCard, [name]: value };
   }
 
+  function handleCancel() {
+    isModalOpen = false;
+  }
   function handleSubmit(event) {
     event.preventDefault();
     isModalOpen = false;
@@ -81,8 +84,8 @@
                     <img src={Plus} alt="Agregar" class="w-40 h-40"/>
                   </button>
                 {#if isModalOpen}
-                <div class='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
-                  <div class='bg-black p-5 rounded flex flex-col justify-center items-center gap-5'>
+                <div class='fixed inset-0 bg-opacity-30 bg-black backdrop-blur-sm flex justify-center items-center z-50'>
+                  <div class='bg-white border border-black p-5 rounded flex flex-col justify-center items-center gap-5'>
                 <form on:submit={handleSubmit}>
                   <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">
@@ -146,6 +149,7 @@
                   >
                     Guardar servicio
                   </button>
+                  <button class='text-blue-500 underline' on:click={handleCancel}></button>
                 </form>
                 </div>
                 </div>
