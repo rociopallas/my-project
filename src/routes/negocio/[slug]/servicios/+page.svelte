@@ -2,9 +2,25 @@
   import ServiceCard from '../../../../components/ServiceCard.svelte';
   import { v4 as uuidv4 } from 'uuid';
   import Plus from '../../../../asset/Plus.png';
+  import { onMount } from 'svelte';
 
   let cards = [];
+  let isLoading = true;
 
+  onMount(() => {
+    isLoading = true;
+    const storedCards = localStorage.getItem('cards');
+    if (storedCards) {
+      cards = JSON.parse(storedCards);
+      isLoading = false;
+    }
+  });
+
+  function saveToLocalStorage() {
+    isLoading = true;
+    localStorage.setItem('cards', JSON.stringify(cards));
+    isLoading = false;
+  }
   let formCard = {
     name: '',
     duration: '',
@@ -31,6 +47,7 @@
   function deleteCard(id) {
     cards = cards.filter((card) => card.id !== id);
     console.log('card deleted');
+    saveToLocalStorage();
   }
 
   function handleChange(event) {
@@ -47,6 +64,7 @@
     const id = uuidv4();
     const newCard = { id, isClient: false, data: { ...formCard } }; // Store data in the new card object
     cards = [...cards, newCard];
+    saveToLocalStorage();
     formCard = { // Reset the formCard
       name: '',
       duration: '',
@@ -57,9 +75,15 @@
 
 </script>
 
-
-<div class='flex flex-col items-start mt-40 mb-36'>
-  <h1 class='text-4xl font-bold my-10 ml-5 text-black'>MIS SERVICIOS</h1>
+{#if isLoading}
+<div class='fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex justify-center items-center z-50'>
+  <div class='p-5 rounded flex flex-col justify-center items-center gap-5'>
+    <span class="loading loading-spinner loading-lg"></span>
+  </div>
+</div>
+{/if}
+<div class='flex flex-col items-start mt-6 mb-36 text-black'>
+  <h1 class='text-4xl font-bold my-10 ml-5 mb-36'>MIS SERVICIOS</h1>
     <div class='mx-5 flex flex-wrap gap-5'>
       {#each cards as card (card.id)}
         <div class="w-300" key={card.id}>
