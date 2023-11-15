@@ -19,6 +19,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-brands-svg-icons": "^6.4.2",
+		"@fortawesome/free-regular-svg-icons": "^6.4.2",
+		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"axios": "^1.6.2",
 		"flatpickr": "^4.6.13",
 		"swiper": "^11.0.3",
 		"uuid": "^9.0.1"
