@@ -22,15 +22,15 @@
     }
 
     onMount(() => {
-    isLoading = true;
+
     const storedData = localStorage.getItem('bussinesData');
     const storedSMData = localStorage.getItem('SMData');
     if (storedData && storedSMData) {
       formData = JSON.parse(storedData);
       SMData = JSON.parse(storedSMData);
       console.log( 'se trajeron datos', formData, SMData);
-      isLoading = false;
     }
+    isLoading = false;
   });
   function saveToLocalStorage() {
     isLoading = true;

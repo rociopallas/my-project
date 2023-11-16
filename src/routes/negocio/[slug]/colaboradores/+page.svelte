@@ -8,12 +8,11 @@
   let isLoading = true;
 
   onMount(() => {
-    isLoading = true;
     const storedCards = localStorage.getItem('collabCards');
     if (storedCards) {
       cards = JSON.parse(storedCards);
-      isLoading = false;
     }
+    isLoading = false;
   });
 
   function saveToLocalStorage() {
@@ -29,8 +28,8 @@ let formCard = {
 
 let isModalOpen = false;
 
-function addCard() {
-  isModalOpen = true;
+function toggleModal() {
+  isModalOpen = !isModalOpen;
 }
 
 function editCard(id, newFormData) {
@@ -98,12 +97,12 @@ function handleSubmit(event) {
                 <h1 class="card-title">AGREGAR COLABOADOR</h1>
               </div>
                 <div class="flex flex-row justify-center items-center p-1 pt-4 inset-0 gap-16">
-                  <button on:click={addCard} class=" w-20 h-20 rounded-full iris_green">
+                  <button on:click={toggleModal} class=" w-20 h-20 rounded-full iris_green">
                     <img src={Plus} alt="Agregar" class="w-20 h-20"/>
                   </button>
                   {#if isModalOpen}
                 <div class='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
-                  <div class='bg-white border border-black p-5 rounded flex flex-col justify-center items-center gap-5'>
+                  <div class='bg-white border border-black p-7 rounded-2xl flex flex-col justify-center items-center gap-5'>
                 <form on:submit={handleSubmit}>
                   <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">
@@ -133,12 +132,15 @@ function handleSubmit(event) {
                       required
                     />
                   </div>
-                  <button
-                    type="submit"
-                    class="w-full py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
-                  >
-                    Guardar servicio
-                  </button>
+                  <div class="flex flex-col items-center justify-center gap-2">
+                    <button
+                      type="submit"
+                      class="w-full py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+                    >
+                      Guardar colaborador
+                    </button>
+                    <button class='text-blue-500 underline' on:click={toggleModal}>Cancelar</button>
+                  </div>
                 </form>
                 </div>
                 </div>
