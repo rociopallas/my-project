@@ -22,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"flatpickr": "^4.6.13",
+		"svelte-flatpickr": "^3.3.3",
 		"swiper": "^11.0.3",
 		"uuid": "^9.0.1"
 	}
