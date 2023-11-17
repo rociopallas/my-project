@@ -50,13 +50,13 @@
 <PublicHeader />
 
 <div>
-  <div class="max-w-md mx-auto mt-32 mb-20 border-2 rounded-2xl border-violeta p-10">
+  <div class="max-w-md mx-auto mt-40 mb-40 p-4 border-2 rounded-2xl border-my_violet bg-gray-50 text-black">
     <h2 class="text-2xl font-semibold mb-4">
       Formulario de Registro de Empresa
     </h2>
     <form on:submit={handleSubmit}>
       <div class="mb-4">
-        <label for="name" class="block text-sm font-medium text-gray-700">
+        <label for="name" class="block text-sm font-medium">
           Nombre de la empresa:
         </label>
         <input
@@ -69,7 +69,7 @@
         />
       </div>
       <div class="mb-4">
-        <label for="phone" class="block text-sm font-medium text-gray-700">
+        <label for="phone" class="block text-sm font-medium ">
           Teléfono:
         </label>
         <input
@@ -82,7 +82,7 @@
         />
       </div>
       <div class="mb-4">
-        <label for="adress" class="block text-sm font-medium text-gray-700">
+        <label for="adress" class="block text-sm font-medium ">
           Dirección:
         </label>
         <input
@@ -95,46 +95,46 @@
         />
       </div>
       <div class="mb-8">
-        <p class="block text-sm font-medium text-gray-700">
+        <p class="block text-sm font-medium">
           ¿Quién trabaja en tu empresa?
         </p>
         <div class="form-control">
-          <label class="label cursor-pointer">
+          <label class="label justify-start gap-5 cursor-pointer">
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-my_blue bg-white"
+              checked
+            />
             <span class="label-text">Yo</span>
-            <input
-              type="radio"
-              name="radio-10"
-              class="radio checked:bg-violeta"
-              checked
-            />
           </label>
         </div>
         <div class="form-control">
-          <label class="label cursor-pointer">
+          <label class="label justify-start gap-5 cursor-pointer">
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-my_blue bg-white"
+              checked
+            />
             <span class="label-text">Otros</span>
-            <input
-              type="radio"
-              name="radio-10"
-              class="radio checked:bg-violeta"
-              checked
-            />
           </label>
         </div>
         <div class="form-control">
-          <label class="label cursor-pointer">
-            <span class="label-text">Yo y otros</span>
+          <label class="label justify-start gap-5 cursor-pointer">
             <input
               type="radio"
               name="radio-10"
-              class="radio checked:bg-violeta"
+              class="radio checked:bg-my_blue bg-white"
               checked
             />
+            <span class="label-text">Otros y yo</span>
           </label>
         </div>
       </div>
       <button
         type="submit"
-        class="w-full py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+        class="w-full py-2 text-white bg-my_blue hover:shadow-md hover:opacity-80 rounded-lg"
       >
         Continuar
       </button>

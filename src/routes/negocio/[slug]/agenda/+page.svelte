@@ -2,12 +2,11 @@
   import Calendar from '@event-calendar/core';
   import TimeGrid from '@event-calendar/time-grid';
   import '@event-calendar/core/index.css';
-  import CollabCheckbox from '../../../../components/CollabCheckbox.svelte';
 
   let collabArray = [
-    { name: 'Colaborador 1', isChecked: true },
-    { name: 'Colaborador 2', isChecked: false },
-    { name: 'Colaborador 3', isChecked: false },
+    { name: 'Rosa', isChecked: true },
+    { name: 'Pepe', isChecked: false },
+    { name: 'Maria', isChecked: false },
   ];
 
   let plugins = [TimeGrid];
@@ -114,6 +113,7 @@
         end: '2023-11-05',
         backgroundColor: '#9f53ff'
       }];
+      break;
       case 'Colaborador 2':
         options.events = [
         {
@@ -126,6 +126,7 @@
         start: '2023-11-08T08:00:00',
         end: '2023-11-08T15:00:00'
       },];
+      break;
       case 'Colaborador 3':
         options.events =[
           {
@@ -134,17 +135,19 @@
         end: '2023-11-06T18:00:00'
       }
         ];
+        break;
     }
+    console.log(options.events);
+    console.log(options);
   }
 </script>
 <div class='flex flex-col items-start mt-7 mb-36 text-black'>
   <h1 class='text-4xl font-bold my-10 ml-5'>MI AGENDA</h1>
-<div class="flex justify-center items-center w-full pr-10 gap-10 mx-5">
-  <!-- <div>
+  <div class="flex flex-row justify-center items-center gap-5 w-full my-5">
     {#each collabArray as collaborator}
     <div class="form-control">
       <label class="label cursor-pointer">
-        <span class="label-text">{collaborator.name}</span> 
+        <span class="label-text mr-2 text-base font-semibold">{collaborator.name}</span> 
         <input 
         type="radio" 
         name="radio-10" 
@@ -154,7 +157,9 @@
       </label>
     </div>
     {/each}
-  </div> -->
+  </div>
+<div class="flex justify-center items-center w-full pr-10 gap-10 mx-5">
+
   <div class='justify-center items-center w-full'>
     <div class='bg-white ec-auto-dark text-black'>
       <Calendar {plugins} {options} />

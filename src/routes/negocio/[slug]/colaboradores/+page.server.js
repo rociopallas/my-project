@@ -20,6 +20,6 @@ export const load = async() => {
 	return {...responseData};
   }
 	catch(e) {
-		console.error('no funcó papá');
+		console.error('No funciona aún');
 	}
 }

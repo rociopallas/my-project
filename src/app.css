@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+#root.dark {
+  background-color: #333;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark, body.dark {
+  background-color: #333;
+  color: white;
+}
+
 .gradient-header {
   background: linear-gradient(90deg, #9f53ff, #7a8ada, #15faa7);
 }

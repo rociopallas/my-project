@@ -36,11 +36,11 @@ async function handleSubmit() {
 }
 </script>
 <PublicHeader />
-<div class="max-w-md mx-auto mt-40 p-4 min-h-screen">
+<div class="max-w-md mx-auto mt-40 mb-40 p-4 border-2 rounded-2xl border-my_violet bg-gray-50 text-black">
   <h2 class="text-2xl font-semibold mb-4">Iniciar sesión</h2>
   <form method="post" action="/login" use:enhance>
     <div class="mb-4">
-      <label for="email" class="block text-sm font-medium text-gray-700"
+      <label for="email" class="block text-sm font-medium "
         >Email:</label
       >
       <input
@@ -53,7 +53,7 @@ async function handleSubmit() {
       />
     </div>
     <div class="mb-4">
-      <label for="password" class="block text-sm font-medium text-gray-700"
+      <label for="password" class="block text-sm font-medium "
         >Contraseña:</label
       >
       <input
@@ -68,7 +68,7 @@ async function handleSubmit() {
     <button
       type="button"
       on:click={handleSubmit}
-      class="w-full mt-4 py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+      class="w-full mt-4 py-2 text-white bg-my_blue hover:shadow-md hover:opacity-80 rounded-lg"
     >
       Iniciar Sesión
     </button>

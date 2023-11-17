@@ -31,11 +31,11 @@
 
 <PublicHeader />
 
-<div class="max-w-md mx-auto mt-40 p-4 min-h-screen">
+<div class="max-w-md mx-auto mt-40 mb-20 p-4 border-2 rounded-2xl border-my_violet bg-gray-50 text-black">
   <h2 class="text-2xl font-semibold mb-4">Formulario de Registro</h2>
   <form on:submit={handleSubmit}>
     <div class="mb-4">
-      <label for="name" class="block text-sm font-medium text-gray-700">
+      <label for="name" class="block text-sm font-medium">
         Nombre:
       </label>
       <input
@@ -48,7 +48,7 @@
       />
     </div>
     <div class="mb-4">
-      <label for="email" class="block text-sm font-medium text-gray-700">
+      <label for="email" class="block text-sm font-medium">
         Email:
       </label>
       <input
@@ -61,7 +61,7 @@
       />
     </div>
     <div class="mb-4">
-      <label for="password" class="block text-sm font-medium text-gray-700">
+      <label for="password" class="block text-sm font-medium ">
         Contraseña:
       </label>
       <input
@@ -74,7 +74,7 @@
       />
     </div>
     <div class="mb-4">
-      <label for="re_password" class="block text-sm font-medium text-gray-700">
+      <label for="re_password" class="block text-sm font-medium ">
         Repetir Contraseña:
       </label>
       <input
@@ -88,7 +88,7 @@
     </div>
     <button
       type="submit"
-      class="w-full py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+      class="w-full py-2 text-white bg-my_blue hover:shadow-md hover:opacity-80 rounded-lg"
     >
       Registrarse
     </button>

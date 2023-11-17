@@ -30,12 +30,12 @@
         <div>
         <a href="/registro">
           <button
-            class="w-40 mt-4 py-2 mr-4 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+            class="w-40 mt-4 py-2 mr-4 text-white bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg"
             >Registrarse</button
           ></a>
           <a href="/login">
             <button
-              class="w-40 mt-4 py-2 ml-4 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+              class="w-40 mt-4 py-2 ml-4 text-white bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg"
               >Iniciar sesión</button
             ></a>
         </div>
@@ -50,7 +50,7 @@
   <h1 class="text-5xl font-bold">¿Qué ofrecemos?</h1>
   <div class="grid grid-cols-4 gap-4 px-10 mt-5">
     <div class="gradient-header p-1 rounded-xl flex justify-center">
-      <div class="card bordered w-92 bg-base-100 shadow-xl">
+      <div class="card bordered w-92 bg-base-100 dark:bg-black dark:text-white shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Reservas en línea fáciles</h2>
           <p>
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="gradient-header p-1 rounded-xl flex justify-center">
-      <div class="card bordered w-92 bg-base-100 shadow-xl">
+      <div class="card bordered w-92 bg-base-100 dark:bg-black dark:text-white shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Calendario centralizado</h2>
           <p>
@@ -75,7 +75,7 @@
       </div>
     </div>
     <div class="gradient-header p-1 rounded-xl flex justify-center">
-      <div class="card bordered w-92 bg-base-100 shadow-xl">
+      <div class="card bordered w-92 bg-base-100 dark:bg-black dark:text-white shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Recordarios automatizados</h2>
           <p>
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="gradient-header p-1 rounded-xl flex justify-center">
-      <div class="card bordered w-92 bg-base-100 shadow-xl">
+      <div class="card bordered w-92 bg-base-100 dark:bg-black dark:text-white shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Personalización</h2>
           <p>
@@ -101,7 +101,7 @@
 </div>
 
 <div class="flex flex-col w-full lg:flex-row mb-20 px-10">
-  <div class="grid flex-grow w-1/2">
+  <div class="grid flex-grow w-1/2 text-right">
     <h1 class="text-5xl font-bold pb-5">¿Por qué elegirnos?</h1>
     <p>
       En Iris, entendemos las necesidades de las pequeñas y medianas empresas.
@@ -111,8 +111,8 @@
       significa que puedes crecer sin preocupaciones.
     </p>
   </div>
-  <div class="divider lg:divider-horizontal" />
-  <div class="grid flex-grow w-1/2">
+  <div class="border border-my_blue bg-my_blue w-0.5 mx-10"/>
+  <div class="grid flex-grow w-1/2 text-left">
     <h1 class="text-5xl font-bold">Comienza hoy mismo</h1>
     <p>
       No esperes más para mejorar la gestión de reservas en tu negocio.
@@ -129,13 +129,13 @@
     <h1 class="text-5xl font-bold text-white pb-10">¿Listo para comenzar?</h1>
     <div>
       <button
-        class="w-40 mt-4 py-2 px-4 mr-4 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+        class="w-40 mt-4 py-2 px-4 mr-4 text-white bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg"
       >
         Ver demo
       </button>
       <a href="/registro">
         <button
-          class="w-40 mt-4 py-2 px-4 ml-4 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+          class="w-40 mt-4 py-2 px-4 ml-4 text-white bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg"
           >Registrarse</button
         ></a>
     </div>
@@ -159,7 +159,7 @@
         </p>
         <a href="/contacto">
         <button
-          class="w-40 mt-4 py-2 text-white bg-violeta hover:shadow-md hover:opacity-80 rounded-lg"
+          class="w-40 mt-4 py-2 text-white bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg"
           >Ponte en contacto</button
         ></a>
       </div>
