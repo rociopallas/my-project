@@ -5,6 +5,9 @@
   import Flatpickr from 'svelte-flatpickr';
   import 'flatpickr/dist/flatpickr.css';
   import { onMount } from "svelte";
+  import 'flatpickr/dist/themes/light.css';
+
+ 
 
 
   let services = [];
@@ -87,14 +90,29 @@
     console.log(selectedCollaborators[service.id]);
   }
 
+  // svelte-flatpickr
   let value, formattedValue;
-
-const options = {
-    enableTime: true,
-    onChange(selectedDates, dateStr) {
-        console.log('flatpickr hook', selectedDates, dateStr);
-    }
-};
+  let date = null;
+  const options = {
+      enableTime: true,
+      altInput: true,
+      altFormat: "F j, Y h:i K",
+      time_24hr: true,
+      locale: {
+          firstDayOfWeek: 1,
+          weekdays: {
+            shorthand: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],         
+          }, 
+          months: {
+            shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Оct', 'Nov', 'Dic'],
+            longhand: ['Enero', 'Febreo', 'Мarzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+          },
+        },
+      onChange(selectedDates, dateStr) {
+          console.log('flatpickr hook', selectedDates, dateStr);
+      }
+  };
 
 $: console.log({ value, formattedValue });
 
@@ -143,14 +161,6 @@ function handleSubmit(event) {
         <p class="py-4">
           <strong>Fecha y hora:</strong>
         </p>
-          <form on:submit={handleSubmit}>
-            <Flatpickr {options} bind:value bind:formattedValue on:change={handleChange} name="date" class='z-50'/>
-        
-            <button type="submit">
-                Confirmar
-            </button>
-        </form>
-
       {/each}
     </div>
   </dialog>
@@ -177,6 +187,20 @@ function handleSubmit(event) {
               <option value={collaborator}>{collaborator}</option>
             {/each}
           </select>
+          <Flatpickr
+            options="{ options }"
+            bind:value="{date}"
+            element="#my-picker"
+          >
+            <div class="flatpickr" id="my-picker">
+                <input type="text" placeholder="Fecha y hora..." data-input class="w-full"/>
+
+                <a class="input-button" title="clear" data-clear>
+                    <i class="icon-close"></i>
+                </a>
+            </div>
+          </Flatpickr>
+
 
           <!-- Botones de agregar y eliminar servicio -->
           <div class="flex justify-between card-actions">
