@@ -14,38 +14,49 @@
     firstCollaborator: "",
   };
 
+  //Función SIN SERVIDOR
+  function handleSubmit() {
+    localStorage.setItem("negocio", business.name);
+    localStorage.setItem("phone", business.phone);
+    localStorage.setItem("address", business.address);
+    let link = "www.iris-mvp.com/reserva/" + business.name;
+    localStorage.setItem("link", link);
+    let ruta = "/negocio/" + business.name;
+    window.location.replace(ruta)
+  }
+
   // Método para enviar datos al backend con el token adjunto en el encabezado
-  const sendDataToBackend = async () => {
-    try {
-      const token = $store.token;
+//   const sendDataToBackend = async () => {
+//     try {
+//       const token = $store.token;
 
-      const dataToSend = {
-        name: business.name,
-        phone: business.phone,
-        address: business.address,
-      };
+//       const dataToSend = {
+//         name: business.name,
+//         phone: business.phone,
+//         address: business.address,
+//       };
 
-      const response = await axios.post(
-        "https://localhost:8000/api/Business_Data/",
-        dataToSend,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//       const response = await axios.post(
+//         "https://localhost:8000/api/Business_Data/",
+//         dataToSend,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${token}`,
+//           },
+//         }
+//       );
+//       console.log(response.data);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await sendDataToBackend();
-    goto("/negocio/rosa");
-  };
-</script>
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     await sendDataToBackend();
+//     goto("/negocio/rosa");
+//   };
+// </script>
 
 <PublicHeader />
 

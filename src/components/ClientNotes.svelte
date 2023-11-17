@@ -6,7 +6,7 @@
 <div class=" w-3/4 h-3/4 text-black">
   <table class="table">
     <!-- head -->
-    <thead class="text-2xl text-black">
+    <thead class="text-2xl text-black dark:text-white">
       <tr>
         <th></th>
         <th>Nombre</th>

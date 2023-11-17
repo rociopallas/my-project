@@ -1,8 +1,12 @@
 <script>
   import logoIris from "../asset/Iris.svg";
-  import loginIcon from "../asset/login.svg";
+  import { onMount } from "svelte";
 
-  let nombreUsuario = "nombreUsuario"
+  let nombreUsuario = onMount(() => {
+    const nombreUsuario = localStorage.getItem("negocio");
+    return nombreUsuario;
+  });
+  
   let isDarkMode = false;
 
   function toggleDarkMode() {

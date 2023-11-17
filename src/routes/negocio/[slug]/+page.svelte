@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="flex flex-col gap-5 mt-20 mb-36 justify-center items-center text-black"
+  class="flex flex-col gap-5 mt-20 mb-36 justify-center items-center text-black dark:text-white"
 >
   <div class="flex justify-between items-center p-20 h-96">
     <div class="items-center justify-center w-1/2 space">
@@ -11,11 +11,11 @@
     </div>
     <div class="gradient-header p-1 rounded-2xl w-1/2">
       <div
-        class="flex flex-col justify-center items-center bg-white rounded-2xl gap-2 p-2"
+        class="flex flex-col justify-center items-center  rounded-2xl gap-2 p-2"
       >
         <h1 class="text-4xl font-semibold pb-5">Preguntas frecuentes</h1>
 
-        <div class="collapse collapse-arrow bg-white border border-black">
+        <div class="collapse collapse-arrow  border border-black">
           <input type="checkbox" />
           <div class="collapse-title text-xl font-medium">
             ¿Cómo agregar servicios?
@@ -28,7 +28,7 @@
             </p>
           </div>
         </div>
-        <div class="collapse collapse-arrow bg-white border border-black">
+        <div class="collapse collapse-arrow  border border-black">
           <input type="checkbox" />
           <div class="collapse-title text-xl font-medium">
             ¿Como agregar colaboradores?
@@ -41,7 +41,7 @@
             </p>
           </div>
         </div>
-        <div class="collapse collapse-arrow bg-white border border-black">
+        <div class="collapse collapse-arrow  border border-black">
           <input type="checkbox" />
           <div class="collapse-title text-xl font-medium">
             ¿Cómo se agendan mis clientes?

@@ -65,7 +65,7 @@
               <div class="w-2/3">
                 <label
                   for="name"
-                  class="block text-sm font-medium text-gray-700"
+                  class="block text-sm font-medium text-black dark:text-black"
                 />
                 <input
                   type="name"
@@ -94,7 +94,7 @@
               <div class="">
                 <label
                   for="email"
-                  class="block text-sm font-medium text-gray-700"
+                  class="block text-sm font-medium text-black dark:text-black"
                 />
                 <input
                   type="email"
@@ -124,7 +124,7 @@
               <div class="">
                 <label
                   for="phone"
-                  class="block text-sm font-medium text-gray-700"
+                  class="block text-sm font-medium text-black dark:text-black"
                 />
                 <input
                   type="phone"
@@ -154,7 +154,7 @@
               <div class="">
                 <label
                   for="adress"
-                  class="block text-sm font-medium text-gray-700"
+                  class="block text-sm font-medium text-black dark:text-black"
                 />
                 <input
                   type="address"
@@ -167,6 +167,8 @@
                   {disabled}
                 />
               </div>
+
+
             </form>
           </div>
           <button on:click={handleEdit}>

@@ -3,10 +3,9 @@
   import TimeGrid from '@event-calendar/time-grid';
   import '@event-calendar/core/index.css';
 
+
   let collabArray = [
-    { name: 'Rosa', isChecked: true },
-    { name: 'Pepe', isChecked: false },
-    { name: 'Maria', isChecked: false },
+    { name: 'colaborador 1', isChecked: true },
   ];
 
   let plugins = [TimeGrid];
@@ -141,17 +140,17 @@
     console.log(options);
   }
 </script>
-<div class='flex flex-col items-start mt-7 mb-36 text-black'>
+<div class='flex flex-col items-start mt-7 mb-36 '>
   <h1 class='text-4xl font-bold my-10 ml-5'>MI AGENDA</h1>
-  <div class="flex flex-row justify-center items-center gap-5 w-full my-5">
+  <div class="flex flex-row justify-center items-center gap-5 w-full my-5 dark:text-white">
     {#each collabArray as collaborator}
     <div class="form-control">
       <label class="label cursor-pointer">
-        <span class="label-text mr-2 text-base font-semibold">{collaborator.name}</span> 
+        <span class=" mr-2 font-semibold">{collaborator.name}</span> 
         <input 
         type="radio" 
         name="radio-10" 
-        class="radio" 
+        class="radio bg-white" 
         bind:group={selectedCollaborator} 
         value={collaborator.name}/>
       </label>

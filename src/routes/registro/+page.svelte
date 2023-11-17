@@ -8,25 +8,33 @@
     password = "",
     re_password = "";
 
-  async function handleSubmit() {
-    console.log('Enviando solicitud:', { name, email, password, re_password });
-    const response = await fetch("http://127.0.0.1:8000/auth/users/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password, re_password }),
-    });
-    console.log('Respuesta del servidor:', response);
-
-    if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem("token", data.token);
-      goto("/registro/registroEmpresa");
-    } else {
-      alert("Error al crear el usuario");
-    }
+  //Función SIN SERVIDOR
+  function handleSubmit() {
+    localStorage.setItem("usuario", name);
+    localStorage.setItem("email", email);
+    console.log(name, email);
+    window.location.replace("/registro/registroEmpresa");
   }
+
+  // async function handleSubmit() {
+  //   console.log('Enviando solicitud:', { name, email, password, re_password });
+  //   const response = await fetch("http://127.0.0.1:8000/auth/users/", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ name, email, password, re_password }),
+  //   });
+  //   console.log('Respuesta del servidor:', response);
+
+  //   if (response.ok) {
+  //     const data = await response.json();
+  //     localStorage.setItem("token", data.token);
+  //     goto("/registro/registroEmpresa");
+  //   } else {
+  //     alert("Error al crear el usuario");
+  //   }
+  // }
 </script>
 
 <PublicHeader />

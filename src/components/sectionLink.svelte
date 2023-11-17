@@ -1,8 +1,18 @@
 <script>
   import Navigate from '../asset/Navigate.png';
   import Copy from '../asset/Copy.png';
+  import { onMount } from 'svelte';
 
-  let enlace = 'https://www.iris-mvp.com/reserva/';
+  let nombreNegocio = onMount(() => {
+    let nombreNegocio = localStorage.getItem("negocio");
+    console.log(nombreNegocio);
+    return nombreNegocio;
+  });
+  console.log(nombreNegocio)
+
+
+  let enlace = 'https://www.iris-mvp.com/reserva/' + nombreNegocio;
+  console.log(enlace)
 
   async function handleCopy() {
     try {
@@ -19,7 +29,7 @@
   <div class="flex flex-col items-center justify-center gap-5 my-32">
     <div class=" bg-gray-100 px-5 py-2 border border-black justify-center items-center flex flex-row gap-5 rounded-2xl">
       <div class="py-5">
-        <p class="mx-20 text-2xl">{enlace}</p>
+        <p class="mx-20 text-2xl dark:text-black">{enlace}</p>
       </div>
       <button on:click={handleCopy} class="p-2">
         <img src={Copy} alt='copiar enlace' class="h-9" />

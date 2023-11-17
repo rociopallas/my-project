@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Agenda</title>
+  <title>Mi negocio</title>
 </svelte:head>
 
 <div class="mt-32 mb-36 px-20">
