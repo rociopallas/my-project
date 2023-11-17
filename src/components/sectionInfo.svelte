@@ -53,7 +53,7 @@
   }
 </script>
 
-<div class="">
+<div class="dark:text-black">
   <div class="flex flex-row h-full justify-center items-start gap-10">
     <div class="w-1/3 flex flex-col gap-5 text-xl mx-14">
       <div class="gradient-header p-0.5 justify-center items-center rounded-xl">
