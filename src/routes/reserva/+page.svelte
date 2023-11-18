@@ -1,8 +1,14 @@
 <script>
   import HeaderClient from "../../components/headerClient.svelte";
   import Footer from "../../components/footerClient.svelte";
-  import logoPelu from "../../asset/calendarioCliente.png";
-  import flatpickr from "flatpickr";
+  import logoPelu from "../../asset/Logo-rosa.png";
+  import Flatpickr from 'svelte-flatpickr';
+  import 'flatpickr/dist/flatpickr.css';
+  import { onMount } from "svelte";
+  import 'flatpickr/dist/themes/light.css';
+
+ 
+
 
   let services = [];
   let selectedServices = [];
@@ -16,7 +22,7 @@
       description: "Corte de pelo para hombre, incluye barba",
       cost: "$450",
       duration: "1:00 hora",
-      collaborators: ["José", "Raúl", "Rosa"],
+      collaborators: ["Rosa", "José", "Raúl"],
     },
     {
       id: 2,
@@ -24,7 +30,7 @@
       description: "Corte de pelo para mujer, largo y corto",
       cost: "$500",
       duration: "1:30 horas",
-      collaborators: ["José", "Rosa", "Patricia"],
+      collaborators: ["Rosa", "José", "Patricia"],
     },
   ];
 
@@ -84,14 +90,42 @@
     console.log(selectedCollaborators[service.id]);
   }
 
-  function selectDate() {
-    flatpickr(".date-picker", {
-      dateFormat: "Y-m-d",
-      onChange: (selectedDates) => {
-        selectedDate = selectedDates[0] || null;
-      },
-    });
-  }
+  // svelte-flatpickr
+  let value, formattedValue;
+  let date = null;
+  const options = {
+      enableTime: true,
+      altInput: true,
+      altFormat: "F j, Y h:i K",
+      time_24hr: true,
+      locale: {
+          firstDayOfWeek: 1,
+          weekdays: {
+            shorthand: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],         
+          }, 
+          months: {
+            shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Оct', 'Nov', 'Dic'],
+            longhand: ['Enero', 'Febreo', 'Мarzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+          },
+        },
+      onChange(selectedDates, dateStr) {
+          console.log('flatpickr hook', selectedDates, dateStr);
+      }
+  };
+
+$: console.log({ value, formattedValue });
+
+function handleChange(event) {
+    const [ selectedDates, dateStr ] = event.detail;
+    console.log({ selectedDates, dateStr });
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    console.log(event.target.elements['date'].value);
+}
   // Llamada a la función para cargar servicios al cargar la página
   // loadServices();
 </script>
@@ -99,13 +133,13 @@
   <title>Reserva</title>
 </svelte:head>
 
-<HeaderClient title="[NOMBRE COMERCIO]" rubro="[Rubro]" />
+<HeaderClient title="Peluqueria de Rosa" rubro="Centro de estetica" />
 <img class="profile-picture" src={logoPelu} alt="Foto de perfil" />
 
-<div class="container px-20 my-20">
+<div class="container px-20 mt-20 mb-28">
   <!-- Barra de confirmación de reserva -->
   <button
-    class="bg-violeta hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
+    class="bg-my_violet hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
     onclick="my_modal_3.showModal()"
   >
     Confirmar
@@ -123,17 +157,9 @@
       </form>
       <h3 class="font-bold text-lg">Confirmar reservas</h3>
       {#each exampleServices as service}
-        <p class="py-4">{service.title} con {selectedCollaborators[service.title]}</p>
+        <p class="py-4">{service.title} con {selectedCollaborators[service.id]}</p>
         <p class="py-4">
-          <strong>Fecha:</strong>
-          <input
-            class="date-picker"
-            type="text"
-            placeholder="Seleccione la fecha aquí"
-          />
-        </p>
-        <p class="py-4">
-          <strong>Horarios:</strong>
+          <strong>Fecha y hora:</strong>
         </p>
       {/each}
     </div>
@@ -161,17 +187,31 @@
               <option value={collaborator}>{collaborator}</option>
             {/each}
           </select>
+          <Flatpickr
+            options="{ options }"
+            bind:value="{date}"
+            element="#my-picker"
+          >
+            <div class="flatpickr" id="my-picker">
+                <input type="text" placeholder="Fecha y hora..." data-input class="w-full"/>
+
+                <a class="input-button" title="clear" data-clear>
+                    <i class="icon-close"></i>
+                </a>
+            </div>
+          </Flatpickr>
+
 
           <!-- Botones de agregar y eliminar servicio -->
           <div class="flex justify-between card-actions">
             <button
-              class="btn bg-verde hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
+              class="btn bg-my_green hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
               on:click={() => addToCart(service)}
             >
               Agregar
             </button>
             <button
-              class="btn bg-azul hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
+              class="btn bg-my_blue hover:shadow-md hover:opacity-80 rounded-lg text-white font-bold py-2 px-4"
               on:click={() => removeFromCart(service)}
             >
               Eliminar

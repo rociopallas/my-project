@@ -122,7 +122,7 @@
       <div class="gradient-header p-1 rounded-2xl">
         <div class="flex flex-row gap-1 w-96 h-72">
           <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body flex flex-col pb-5 pt-0 h-72 justify-center">
+            <div class="card-body flex flex-col pb-5 -mt-10 h-72 justify-center">
               <div class=" flex flex-wrap justify-center items-center border-b border-black h-16">
                 <h1 class="card-title">AGREGAR SERVICIO</h1>
               </div>

@@ -70,7 +70,7 @@ const handleSubmit = (e) => {
               <div class='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
                 <div class='bg-white p-5 rounded flex flex-col justify-center items-center gap-5'>
                   <div class="max-w-md mx-auto py-4">
-                    <h2 class="text-2xl font-semibold mb-4">Editar Servicio</h2>
+                    <h2 class="text-2xl font-semibold mb-4">Editar Colaborador</h2>
                     <form on:submit={handleSubmit}>
                       <div class="mb-4">
                         <label for="name" class="block text-sm font-medium text-gray-700">
@@ -119,9 +119,9 @@ const handleSubmit = (e) => {
         <div class="flex flex-row justify-center items-center p-4 gap-20">
           <h1 class="ml-50 font-semibold text-xl">{data.phone}</h1>
         </div>
-        <div class="flex flex-row justify-center items-center py-4">
+        <!-- <div class="flex flex-row justify-center items-center py-4">
           <h1 class="font-semibold">[LINK]</h1>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

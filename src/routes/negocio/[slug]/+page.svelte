@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="flex flex-col gap-5 mt-20 mb-36 justify-center items-center text-black dark:text-white"
+  class="flex flex-col gap-5 mt-36 mb-64 justify-center items-center text-black dark:text-white"
 >
   <div class="flex justify-between items-center p-20 h-96">
     <div class="items-center justify-center w-1/2 space">
